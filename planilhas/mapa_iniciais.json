@@ -1,0 +1,207 @@
+{
+  "arquivo": "planilhas/divulgacao_anos_iniciais_municipios_2025.ods",
+  "identificador": "anos_iniciais",
+  "linhaInicial": 11,
+  "uf": "A",
+  "codigoMunicipio": "B",
+  "nomeMunicipio": "C",
+  "rede": "D",
+  "2005": {
+    "geral": "E",
+    "periodos": [
+      { "ano_1": "F" },
+      { "ano_2": "G" },
+      { "ano_3": "H" },
+      { "ano_4": "I" },
+      { "ano_5": "J" }
+    ],
+    "indicadorRendimento": "K",
+    "notaSAEB": {
+      "matematica": "CD",
+      "linguaPortuguesa": "CE",
+      "notaMediaPadronizada": "CF"
+    },
+    "idebNxP": "DK",
+    "metaPrimeiroCiclo": "-"
+  },
+  "2007": {
+    "geral": "L",
+    "periodos": [
+      { "ano_1": "M" },
+      { "ano_2": "N" },
+      { "ano_3": "O" },
+      { "ano_4": "P" },
+      { "ano_5": "Q" }
+    ],
+    "indicadorRendimento": "R",
+    "notaSAEB": {
+      "matematica": "CG",
+      "linguaPortuguesa": "CH",
+      "notaMediaPadronizada": "CI"
+    },
+    "idebNxP": "DL",
+    "metaPrimeiroCiclo": "DV"
+  },
+  "2009": {
+    "geral": "S",
+    "periodos": [
+      { "ano_1": "T" },
+      { "ano_2": "U" },
+      { "ano_3": "V" },
+      { "ano_4": "W" },
+      { "ano_5": "X" }
+    ],
+    "indicadorRendimento": "Y",
+    "notaSAEB": {
+      "matematica": "CJ",
+      "linguaPortuguesa": "CK",
+      "notaMediaPadronizada": "CL"
+    },
+    "idebNxP": "DM",
+    "metaPrimeiroCiclo": "DW"
+  },
+  "2011": {
+    "geral": "Z",
+    "periodos": [
+      { "ano_1": "AA" },
+      { "ano_2": "AB" },
+      { "ano_3": "AC" },
+      { "ano_4": "AD" },
+      { "ano_5": "AE" }
+    ],
+    "indicadorRendimento": "AF",
+    "notaSAEB": {
+      "matematica": "CM",
+      "linguaPortuguesa": "CN",
+      "notaMediaPadronizada": "CO"
+    },
+    "idebNxP": "DN",
+    "metaPrimeiroCiclo": "DX"
+  },
+  "2013": {
+    "geral": "AG",
+    "periodos": [
+      { "ano_1": "AH" },
+      { "ano_2": "AI" },
+      { "ano_3": "AJ" },
+      { "ano_4": "AK" },
+      { "ano_5": "AL" }
+    ],
+    "indicadorRendimento": "AM",
+    "notaSAEB": {
+      "matematica": "CP",
+      "linguaPortuguesa": "CQ",
+      "notaMediaPadronizada": "CR"
+    },
+    "idebNxP": "DO",
+    "metaPrimeiroCiclo": "DY"
+  },
+  "2015": {
+    "geral": "AN",
+    "periodos": [
+      { "ano_1": "AO" },
+      { "ano_2": "AP" },
+      { "ano_3": "AQ" },
+      { "ano_4": "AR" },
+      { "ano_5": "AS" }
+    ],
+    "indicadorRendimento": "AT",
+    "notaSAEB": {
+      "matematica": "CS",
+      "linguaPortuguesa": "CT",
+      "notaMediaPadronizada": "CU"
+    },
+    "idebNxP": "DP",
+    "metaPrimeiroCiclo": "DZ"
+  },
+  "2017": {
+    "geral": "AU",
+    "periodos": [
+      { "ano_1": "AV" },
+      { "ano_2": "AW" },
+      { "ano_3": "AX" },
+      { "ano_4": "AY" },
+      { "ano_5": "AZ" }
+    ],
+    "indicadorRendimento": "BA",
+    "notaSAEB": {
+      "matematica": "CV",
+      "linguaPortuguesa": "CW",
+      "notaMediaPadronizada": "CX"
+    },
+    "idebNxP": "DQ",
+    "metaPrimeiroCiclo": "EA"
+  },
+  "2019": {
+    "geral": "BB",
+    "periodos": [
+      { "ano_1": "BC" },
+      { "ano_2": "BD" },
+      { "ano_3": "BE" },
+      { "ano_4": "BF" },
+      { "ano_5": "BG" }
+    ],
+    "indicadorRendimento": "BH",
+    "notaSAEB": {
+      "matematica": "CY",
+      "linguaPortuguesa": "CZ",
+      "notaMediaPadronizada": "DA"
+    },
+    "idebNxP": "DR",
+    "metaPrimeiroCiclo": "EB"
+  },
+  "2021": {
+    "geral": "BI",
+    "periodos": [
+      { "ano_1": "BJ" },
+      { "ano_2": "BK" },
+      { "ano_3": "BL" },
+      { "ano_4": "BM" },
+      { "ano_5": "BN" }
+    ],
+    "indicadorRendimento": "BO",
+    "notaSAEB": {
+      "matematica": "DB",
+      "linguaPortuguesa": "DC",
+      "notaMediaPadronizada": "DD"
+    },
+    "idebNxP": "DS",
+    "metaPrimeiroCiclo": "EC"
+  },
+  "2023": {
+    "geral": "BP",
+    "periodos": [
+      { "ano_1": "BQ" },
+      { "ano_2": "BR" },
+      { "ano_3": "BS" },
+      { "ano_4": "BT" },
+      { "ano_5": "BU" }
+    ],
+    "indicadorRendimento": "BV",
+    "notaSAEB": {
+      "matematica": "DE",
+      "linguaPortuguesa": "DF",
+      "notaMediaPadronizada": "DG"
+    },
+    "idebNxP": "DT",
+    "metaPrimeiroCiclo": "-"
+  },
+  "2025": {
+    "geral": "BW",
+    "periodos": [
+      { "ano_1": "BX" },
+      { "ano_2": "BY" },
+      { "ano_3": "BZ" },
+      { "ano_4": "CA" },
+      { "ano_5": "CB" }
+    ],
+    "indicadorRendimento": "CC",
+    "notaSAEB": {
+      "matematica": "DH",
+      "linguaPortuguesa": "DI",
+      "notaMediaPadronizada": "DJ"
+    },
+    "idebNxP": "DU",
+    "metaPrimeiroCiclo": "-"
+  }
+}
