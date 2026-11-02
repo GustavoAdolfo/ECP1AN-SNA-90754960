@@ -212,40 +212,12 @@ def processar_conteudo(df, config):
     return data
 
 
-# def processar_conteudo(df, config):
-#     """Processa o conteúdo de um DataFrame de acordo com a configuração fornecida."""
-#     # Implementar a lógica de processamento aqui
-#     data = {}
-#     identificador = config["identificador"]
-#     if identificador not in data:
-#         data[identificador] = {}
-#     ufs = extrair_ufs(df, config)
-#     for ano_indice in range(2005, 2026, 2):
-#         if "ano" not in data[identificador]:
-#             data[identificador]["ano"] = {}
-#         data[identificador]["ano"][ano_indice] = {}
-#         for uf in ufs:
-#             data[identificador]["ano"][ano_indice]["uf"] = uf
-#         # for ano_indice in range(2005, 2026, 2):
-#         #     data[identificador][ano_indice][uf] = {}
-#         #     municipios = extrair_municipios(df, uf, config)
-#         #     for codigo, conteudo in municipios.items():
-#         #         data[identificador][ano_indice][uf][codigo] = {"nome": conteudo["nome"]}
-#         #         for rede in conteudo["rede"]:
-#         #             valores_indices = extrair_valores_indices(
-#         #                 df, ano_indice, codigo, config, rede
-#         #             )
-#         #             data[identificador][ano_indice][uf][codigo][rede] = valores_indices
-
-#     exportar_parquet(data, config["arquivo"])
-
-
 def __main__():
     for config in FONTE_ODS:
         fonte = config["arquivo"]
         df = extrair_ods(config["arquivo"])
         processar_conteudo(df, config)
-        print(f"Dados extraídos de {fonte}:")
+        print(f"Dados extraídos de {fonte}")
 
 
 if __name__ == "__main__":

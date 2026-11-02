@@ -3,13 +3,13 @@
 import pandas as pd
 import pytest
 
-import extrair_ods
+import extrair_notas
 
 
 @pytest.mark.parametrize("identificador", ["iniciais", "finais"])
 def test_processar_conteudo_preserva_hierarquia(tmp_path, monkeypatch, identificador):
     """Preserva municípios, redes e índices em cada ano e na leitura do Parquet."""
-    monkeypatch.setattr(extrair_ods, "BASE_DIR", tmp_path)
+    monkeypatch.setattr(extrair_notas, "BASE_DIR", tmp_path)
     df = pd.DataFrame(
         [
             ["UF", "Código", "Nome", "Rede", "Geral", "Rendimento", "Período"],
@@ -46,7 +46,7 @@ def test_processar_conteudo_preserva_hierarquia(tmp_path, monkeypatch, identific
         }
     config["2007"]["geral"] = "G"
 
-    data = extrair_ods.processar_conteudo(df, config)
+    data = extrair_notas.processar_conteudo(df, config)
 
     assert set(data) == {identificador}
     assert list(data[identificador]) == anos
@@ -76,9 +76,18 @@ def test_processar_conteudo_preserva_hierarquia(tmp_path, monkeypatch, identific
 
     resultado = pd.read_parquet(tmp_path / "parquet" / f"{identificador}.parquet")
     assert list(resultado.columns) == [
-        "identificador", "ano", "uf", "codigoMunicipio", "nomeMunicipio", "rede",
-        "geral", "indicadorRendimento", "ano_1",
-        "idebNxP", "metaPrimeiroCiclo", "notaSAEB",
+        "identificador",
+        "ano",
+        "uf",
+        "codigoMunicipio",
+        "nomeMunicipio",
+        "rede",
+        "geral",
+        "indicadorRendimento",
+        "ano_1",
+        "idebNxP",
+        "metaPrimeiroCiclo",
+        "notaSAEB",
     ]
     assert len(resultado) == len(anos) * 6
     dimensoes = ["identificador", "ano", "uf", "codigoMunicipio", "rede"]
@@ -105,7 +114,7 @@ def test_processar_conteudo_preserva_hierarquia(tmp_path, monkeypatch, identific
 
 def test_exportar_parquet_preserva_rede_sem_indices(tmp_path, monkeypatch):
     """Redes ainda sem índices também produzem linhas consultáveis."""
-    monkeypatch.setattr(extrair_ods, "BASE_DIR", tmp_path)
+    monkeypatch.setattr(extrair_notas, "BASE_DIR", tmp_path)
     data = {
         "iniciais": {
             2005: {
@@ -121,7 +130,7 @@ def test_exportar_parquet_preserva_rede_sem_indices(tmp_path, monkeypatch):
         }
     }
 
-    extrair_ods.exportar_parquet(data, "iniciais.ods")
+    extrair_notas.exportar_parquet(data, "iniciais.ods")
 
     resultado = pd.read_parquet(tmp_path / "parquet" / "iniciais.parquet")
     assert len(resultado) == 3
@@ -130,7 +139,9 @@ def test_exportar_parquet_preserva_rede_sem_indices(tmp_path, monkeypatch):
     assert resultado["codigoMunicipio"].tolist() == ["2300101"] * 3
 
 
-@pytest.mark.parametrize("config", extrair_ods.FONTE_ODS, ids=lambda c: c["identificador"])
+@pytest.mark.parametrize(
+    "config", extrair_notas.FONTE_ODS, ids=lambda c: c["identificador"]
+)
 @pytest.mark.parametrize("ano", range(2005, 2026, 2))
 def test_extrair_notas_e_metas_conforme_mapas(config, ano):
     """Verifica as colunas de cada ano nos dois mapas reais."""
@@ -140,26 +151,29 @@ def test_extrair_notas_e_metas_conforme_mapas(config, ano):
         "idebNxP": mapa["idebNxP"],
         "metaPrimeiroCiclo": mapa["metaPrimeiroCiclo"],
     }
-    largura = max(
-        extrair_ods.indice_coluna(coluna)
-        for coluna in colunas.values()
-        if coluna != "-"
-    ) + 1
+    largura = (
+        max(
+            extrair_notas.indice_coluna(coluna)
+            for coluna in colunas.values()
+            if coluna != "-"
+        )
+        + 1
+    )
     df = pd.DataFrame(
         [[None] * largura for _ in range(config["linhaInicial"])], dtype=object
     )
     linha = config["linhaInicial"] - 1
-    df.iat[linha, extrair_ods.indice_coluna(config["codigoMunicipio"])] = "2300101"
-    df.iat[linha, extrair_ods.indice_coluna(config["rede"])] = "Municipal"
+    df.iat[linha, extrair_notas.indice_coluna(config["codigoMunicipio"])] = "2300101"
+    df.iat[linha, extrair_notas.indice_coluna(config["rede"])] = "Municipal"
     esperados = {}
     for indice, (chave, coluna) in enumerate(colunas.items(), start=1):
         if coluna == "-":
             esperados[chave] = None
         else:
             esperados[chave] = indice + 0.25
-            df.iat[linha, extrair_ods.indice_coluna(coluna)] = str(esperados[chave])
+            df.iat[linha, extrair_notas.indice_coluna(coluna)] = str(esperados[chave])
 
-    valores = extrair_ods.extrair_valores_indices(
+    valores = extrair_notas.extrair_valores_indices(
         df, ano, "2300101", config, "Municipal"
     )
 
@@ -170,16 +184,18 @@ def test_extrair_notas_e_metas_conforme_mapas(config, ano):
     assert valores["metaPrimeiroCiclo"] == esperados["metaPrimeiroCiclo"]
 
 
-@pytest.mark.parametrize("valor", [None, float("nan"), "-", "ND", "ND*", "ND***", " ND "])
+@pytest.mark.parametrize(
+    "valor", [None, float("nan"), "-", "ND", "ND*", "ND***", " ND "]
+)
 def test_extrair_valor_numerico_ausente(valor):
     """Células sem valor numérico resultam em None."""
-    assert extrair_ods.extrair_valor_numerico(pd.Series([valor]), "A") is None
+    assert extrair_notas.extrair_valor_numerico(pd.Series([valor]), "A") is None
 
 
 def test_extrair_valor_numerico_invalido():
     """Textos inesperados não são silenciosamente convertidos em ausência."""
     with pytest.raises(ValueError):
-        extrair_ods.extrair_valor_numerico(pd.Series(["inválido"]), "A")
+        extrair_notas.extrair_valor_numerico(pd.Series(["inválido"]), "A")
 
 
 @pytest.mark.parametrize(
@@ -187,4 +203,4 @@ def test_extrair_valor_numerico_invalido():
 )
 def test_extrair_valor_numerico_decimal(valor):
     """Aceita valores numéricos e notas textuais com ponto ou vírgula decimal."""
-    assert extrair_ods.extrair_valor_numerico(pd.Series([valor]), "A") == 231.42
+    assert extrair_notas.extrair_valor_numerico(pd.Series([valor]), "A") == 231.42

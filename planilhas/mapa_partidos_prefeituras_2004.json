@@ -1,0 +1,17 @@
+{
+  "arquivo": "planilhas/votacao_partido_munzona_2004_BRASIL.csv",
+  "ano_eleicao": 2004,
+  "linha_inicial": 2,
+  "codigo_cargo": 11,
+  "descricao_cargo": "Prefeito",
+  "coluna_uf": "K",
+  "coluna_codigo_municipio": "N",
+  "coluna_nome_municipio": "O",
+  "coluna_codigo_cargo": "Q",
+  "coluna_descricao_cargo": "R",
+  "coluna_numero_partido": "T",
+  "coluna_sigla_partido": "U",
+  "coluna_nome_partido": "V",
+  "coluna_qt_votos_nominais": "AA",
+  "coluna_qt_votos_legenda": "AB"
+}

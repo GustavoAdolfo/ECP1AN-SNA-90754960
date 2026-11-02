@@ -1,0 +1,54 @@
+Dados extraídos de planilhas/votacao_partido_munzona_2000_BRASIL.csv
+Dados extraídos de planilhas/votacao_partido_munzona_2004_BRASIL.csv
+Dados extraídos de planilhas/votacao_partido_munzona_2008_BRASIL.csv
+Dados extraídos de planilhas/votacao_partido_munzona_2012_BRASIL.csv
+Dados extraídos de planilhas/votacao_partido_munzona_2016_BRASIL.csv
+Dados extraídos de planilhas/votacao_partido_munzona_2020_BRASIL.csv
+Dados extraídos de planilhas/votacao_partido_munzona_2024_BRASIL.csv
+Resumo de empates: 33 ocorrência(s).
+2000 | RS | 85790 | CAMPO NOVO
+2000 | SC | 81698 | JABORA
+2000 | TO | 73415 | RIO DOS BOIS
+2004 | AM | 2933 | ANAMA
+2004 | BA | 35874 | IRAMAIA
+2004 | GO | 93750 | GOIANIRA
+2004 | MA | 8141 | PRESIDENTE SARNEY
+2004 | MA | 8290 | MATINHA
+2004 | MA | 8486 | SENADOR ALEXANDRE COSTA
+2004 | MG | 41726 | BERIZAL
+2004 | MG | 42455 | CAPELINHA
+2004 | MG | 50318 | PLANURA
+2004 | PB | 19771 | CALDAS BRANDAO
+2004 | PR | 74616 | BOM SUCESSO
+2004 | PR | 76430 | JARDIM ALEGRE
+2004 | RN | 16470 | CARNAUBA DOS DANTAS
+2004 | RO | 132 | VILHENA
+2004 | SC | 81191 | GRAO PARA
+2004 | SP | 61182 | EMBAUBA
+2004 | SP | 61336 | AMERICO BRASILIENSE
+2004 | SP | 68039 | PALMARES PAULISTA
+2004 | SP | 70394 | SANTA LUCIA
+2004 | SP | 71951 | TORRINHA
+2008 | BA | 34215 | CANÁPOLIS
+2008 | MG | 44490 | DOM CAVATI
+2012 | PR | 74438 | BALSA NOVA
+2012 | SP | 61972 | BANANAL
+2016 | CE | 13650 | CARIÚS
+2020 | CE | 14990 | PACUJÁ
+2020 | PB | 19240 | CARAÚBAS
+2020 | PR | 76554 | KALORÉ
+2020 | SC | 81140 | JARDINÓPOLIS
+2024 | MG | 46191 | INHAÚMA
+Resumo de municípios sem registros para o cargo: 12 ocorrência(s).
+2008 | MT | 89834 | PARANATINGA | Prefeito
+2016 | MA | 8931 | SAMBAÍBA | Prefeito
+2016 | SP | 65811 | ITUPEVA | Prefeito
+2016 | SP | 66435 | LINS | Prefeito
+2024 | GO | 93998 | IPORÁ | Prefeito
+2024 | GO | 96610 | AMERICANO DO BRASIL | Prefeito
+2024 | MA | 7137 | ANAJATUBA | Prefeito
+2024 | MA | 7951 | GUIMARÃES | Prefeito
+2024 | MA | 8222 | SANTANA DO MARANHÃO | Prefeito
+2024 | SE | 31119 | BARRA DOS COQUEIROS | Prefeito
+2024 | SE | 31313 | CEDRO DE SÃO JOÃO | Prefeito
+2024 | SE | 31950 | NOSSA SENHORA DO SOCORRO | Prefeito
